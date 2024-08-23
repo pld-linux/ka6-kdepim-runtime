@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.05.2
+%define		kdeappsver	24.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	24.05.2
+Version:	24.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1293e03aa1dafe97fec14934def2aa5b
+# Source0-md5:	e23dece25eb4a5132912a1250b7ecfc7
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -73,8 +73,8 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-ExcludeArch:	x32
 Obsoletes:	ka5-%{kaname} < %{version}
+ExcludeArch:	x32
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_notes_resource
 %attr(755,root,root) %{_bindir}/akonadi_openxchange_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
-%attr(755,root,root) %{_bindir}/akonadi_tomboynotes_resource
+#%attr(755,root,root) %{_bindir}/akonadi_tomboynotes_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/gidmigrator
@@ -166,7 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/notesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/pop3config.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/tomboynotesconfig.so
+#%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/tomboynotesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcardconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kaddressbook/kcm_ldap.so
@@ -192,7 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/notesresource.desktop
 %{_datadir}/akonadi/agents/openxchangeresource.desktop
 %{_datadir}/akonadi/agents/pop3resource.desktop
-%{_datadir}/akonadi/agents/tomboynotesresource.desktop
+#%{_datadir}/akonadi/agents/tomboynotesresource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
 %{_datadir}/akonadi/davgroupware-providers/citadel.desktop
@@ -233,3 +233,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime/packages/kdepim-mime.xml
 %{_datadir}/qlogging-categories6/kdepim-runtime.categories
 %{_datadir}/qlogging-categories6/kdepim-runtime.renamecategories
+%{_datadir}/knotifications6/akonadi_imap_resource.notifyrc
