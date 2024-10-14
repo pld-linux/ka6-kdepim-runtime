@@ -195,6 +195,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{_datadir}/akonadi/agents/tomboynotesresource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
+%dir %{_datadir}/akonadi/davgroupware-providers
 %{_datadir}/akonadi/davgroupware-providers/citadel.desktop
 %{_datadir}/akonadi/davgroupware-providers/davical.desktop
 %{_datadir}/akonadi/davgroupware-providers/egroupware.desktop
@@ -209,6 +210,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/davgroupware-providers/yahoo.desktop
 %{_datadir}/akonadi/davgroupware-providers/zarafa.desktop
 %{_datadir}/akonadi/davgroupware-providers/zimbra.desktop
+%dir %{_datadir}/akonadi/firstrun
 %{_datadir}/akonadi/firstrun/birthdaycalendar
 %{_datadir}/akonadi/firstrun/defaultaddressbook
 %{_datadir}/akonadi/firstrun/defaultcalendar
