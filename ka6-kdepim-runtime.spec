@@ -8,7 +8,7 @@
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
 Version:	24.08.2
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -152,6 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libnewmailnotifier.so.6
 %attr(755,root,root) %{_libdir}/libnewmailnotifier.so.*.*
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/akonadi.so
+%dir %{_libdir}/qt6/plugins/pim6/akonadi/config
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/akonotesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/contactsconfig.so
