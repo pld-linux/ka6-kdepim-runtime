@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.08.3
+%define		kdeappsver	24.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	24.08.3
+Version:	24.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	52c91a558e1427b091c5393224a1a3d4
+# Source0-md5:	4973216f85919027a3fc3465e7bd8f12
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -37,7 +37,6 @@ BuildRequires:	ka6-akonadi-calendar-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-contacts-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka6-akonadi-mime-devel >= %{kdeappsver}
-BuildRequires:	ka6-akonadi-notes-devel >= %{kdeappsver}
 BuildRequires:	ka6-kcalutils-devel >= %{kdeappsver}
 BuildRequires:	ka6-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka6-kimap-devel >= %{kdeappsver}
@@ -114,7 +113,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/akonadi_akonotes_resource
 %attr(755,root,root) %{_bindir}/akonadi_birthdays_resource
 %attr(755,root,root) %{_bindir}/akonadi_contacts_resource
 %attr(755,root,root) %{_bindir}/akonadi_davgroupware_resource
@@ -132,10 +130,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_migration_agent
 %attr(755,root,root) %{_bindir}/akonadi_mixedmaildir_resource
 %attr(755,root,root) %{_bindir}/akonadi_newmailnotifier_agent
-%attr(755,root,root) %{_bindir}/akonadi_notes_resource
 %attr(755,root,root) %{_bindir}/akonadi_openxchange_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
-#%attr(755,root,root) %{_bindir}/akonadi_tomboynotes_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/gidmigrator
@@ -153,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libnewmailnotifier.so.*.*
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/akonadi.so
 %dir %{_libdir}/qt6/plugins/pim6/akonadi/config
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/akonotesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/contactsconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/googleconfig.so
@@ -164,15 +159,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/mboxconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/mixedmaildirconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/newmailnotifierconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/notesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/pop3config.so
-#%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/tomboynotesconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcardconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kaddressbook/kcm_ldap.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
-%{_datadir}/akonadi/agents/akonotesresource.desktop
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
@@ -190,10 +182,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/migrationagent.desktop
 %{_datadir}/akonadi/agents/mixedmaildirresource.desktop
 %{_datadir}/akonadi/agents/newmailnotifieragent.desktop
-%{_datadir}/akonadi/agents/notesresource.desktop
 %{_datadir}/akonadi/agents/openxchangeresource.desktop
 %{_datadir}/akonadi/agents/pop3resource.desktop
-#%{_datadir}/akonadi/agents/tomboynotesresource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
 %dir %{_datadir}/akonadi/davgroupware-providers
@@ -215,7 +205,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/firstrun/birthdaycalendar
 %{_datadir}/akonadi/firstrun/defaultaddressbook
 %{_datadir}/akonadi/firstrun/defaultcalendar
-%{_datadir}/akonadi/firstrun/defaultnotebook
 %{_desktopdir}/org.kde.akonadi_contacts_resource.desktop
 %{_desktopdir}/org.kde.akonadi_davgroupware_resource.desktop
 %{_desktopdir}/org.kde.akonadi_ews_resource.desktop
