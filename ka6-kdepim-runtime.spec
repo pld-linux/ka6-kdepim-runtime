@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.12.3
+%define		kdeappsver	25.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	24.12.3
+Version:	25.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9a1e09489541985cf2529cf5892b5677
+# Source0-md5:	f5cd5c9e364ebb0d42e666c88ffe9b36
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -163,7 +163,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/pop3config.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcardconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kaddressbook/kcm_ldap.so
+%dir %{_libdir}/qt6/plugins/pim6/kcms/common
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/common/kcm_ldap.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
