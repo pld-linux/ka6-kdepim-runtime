@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.1
+%define		kdeappsver	25.04.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	25.04.1
+Version:	25.04.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	459bd64f6e50794f6f0d32838907a68f
+# Source0-md5:	0adb907d40cce720959854dbf4186d6d
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -197,10 +197,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/davgroupware-providers/citadel.desktop
 %{_datadir}/akonadi/davgroupware-providers/davical.desktop
 %{_datadir}/akonadi/davgroupware-providers/egroupware.desktop
+%{_datadir}/akonadi/davgroupware-providers/fastmail.desktop
 %{_datadir}/akonadi/davgroupware-providers/mailbox-org.desktop
 %{_datadir}/akonadi/davgroupware-providers/nextcloud.desktop
 %{_datadir}/akonadi/davgroupware-providers/opengroupware.desktop
-%{_datadir}/akonadi/davgroupware-providers/owncloud-pre5.desktop
 %{_datadir}/akonadi/davgroupware-providers/owncloud-pre9.desktop
 %{_datadir}/akonadi/davgroupware-providers/owncloud.desktop
 %{_datadir}/akonadi/davgroupware-providers/scalix.desktop
@@ -208,6 +208,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/davgroupware-providers/yahoo.desktop
 %{_datadir}/akonadi/davgroupware-providers/zarafa.desktop
 %{_datadir}/akonadi/davgroupware-providers/zimbra.desktop
+%{_datadir}/akonadi/davgroupware-providers/zoho.desktop
 %dir %{_datadir}/akonadi/firstrun
 %{_datadir}/akonadi/firstrun/birthdaycalendar
 %{_datadir}/akonadi/firstrun/defaultaddressbook
