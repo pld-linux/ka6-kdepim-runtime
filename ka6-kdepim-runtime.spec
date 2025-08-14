@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	25.04.3
-Release:	3
+Version:	25.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	15626290accb0c62700df33c3e4ba260
+# Source0-md5:	fe51e39d2de263f1aba2cc49336f48a5
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -153,6 +153,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libmaildir.so.*.*
 %ghost %{_libdir}/libnewmailnotifier.so.6
 %attr(755,root,root) %{_libdir}/libnewmailnotifier.so.*.*
+%ghost %{_libdir}/libakonadi-singlefileresource-widget.so.6
+%attr(755,root,root) %{_libdir}/libakonadi-singlefileresource-widget.so.*.*
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/akonadi.so
 %dir %{_libdir}/qt6/plugins/pim6/akonadi/config
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
@@ -172,6 +174,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/plugins/pim6/kcms/common
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/common/kcm_ldap.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/davgroupwareconfig.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/etesyncconfig.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/imapconfig.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/kolabconfig.so
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
@@ -198,15 +204,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/davgroupware-providers/davical.desktop
 %{_datadir}/akonadi/davgroupware-providers/egroupware.desktop
 %{_datadir}/akonadi/davgroupware-providers/fastmail.desktop
+%{_datadir}/akonadi/davgroupware-providers/kopano.desktop
 %{_datadir}/akonadi/davgroupware-providers/mailbox-org.desktop
 %{_datadir}/akonadi/davgroupware-providers/nextcloud.desktop
-%{_datadir}/akonadi/davgroupware-providers/opengroupware.desktop
 %{_datadir}/akonadi/davgroupware-providers/owncloud-pre9.desktop
 %{_datadir}/akonadi/davgroupware-providers/owncloud.desktop
-%{_datadir}/akonadi/davgroupware-providers/scalix.desktop
 %{_datadir}/akonadi/davgroupware-providers/sogo.desktop
 %{_datadir}/akonadi/davgroupware-providers/yahoo.desktop
-%{_datadir}/akonadi/davgroupware-providers/zarafa.desktop
 %{_datadir}/akonadi/davgroupware-providers/zimbra.desktop
 %{_datadir}/akonadi/davgroupware-providers/zoho.desktop
 %dir %{_datadir}/akonadi/firstrun
@@ -226,6 +230,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
 %{_iconsdir}/hicolor/*x*/apps/*.png
 %{_datadir}/knotifications6/akonadi_ews_resource.notifyrc
+%{_datadir}/knotifications6/akonadi_etesync_resource.notifyrc
 %{_datadir}/knotifications6/akonadi_google_resource.notifyrc
 %{_datadir}/knotifications6/akonadi_maildispatcher_agent.notifyrc
 %{_datadir}/knotifications6/akonadi_newmailnotifier_agent.notifyrc
