@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	429509130e79ce2338776dc6ca603ef4
+# Source0-md5:	8153c1596a4a81bedadf8bfec8c55491
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -143,42 +143,42 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/gidmigrator
 %ghost %{_libdir}/libakonadi-filestore.so.6
-%attr(755,root,root) %{_libdir}/libakonadi-filestore.so.*.*
+%{_libdir}/libakonadi-filestore.so.*.*
 %ghost %{_libdir}/libakonadi-singlefileresource.so.6
-%attr(755,root,root) %{_libdir}/libakonadi-singlefileresource.so.*.*
+%{_libdir}/libakonadi-singlefileresource.so.*.*
 %ghost %{_libdir}/libfolderarchivesettings.so.6
-%attr(755,root,root) %{_libdir}/libfolderarchivesettings.so.*.*
+%{_libdir}/libfolderarchivesettings.so.*.*
 %ghost %{_libdir}/libkmindexreader.so.6
-%attr(755,root,root) %{_libdir}/libkmindexreader.so.*.*
+%{_libdir}/libkmindexreader.so.*.*
 %ghost %{_libdir}/libmaildir.so.6
-%attr(755,root,root) %{_libdir}/libmaildir.so.*.*
+%{_libdir}/libmaildir.so.*.*
 %ghost %{_libdir}/libnewmailnotifier.so.6
-%attr(755,root,root) %{_libdir}/libnewmailnotifier.so.*.*
+%{_libdir}/libnewmailnotifier.so.*.*
 %ghost %{_libdir}/libakonadi-singlefileresource-widget.so.6
-%attr(755,root,root) %{_libdir}/libakonadi-singlefileresource-widget.so.*.*
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/akonadi.so
+%{_libdir}/libakonadi-singlefileresource-widget.so.*.*
+%{_libdir}/qt6/plugins/kf6/kio/akonadi.so
 %dir %{_libdir}/qt6/plugins/pim6/akonadi/config
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/contactsconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/googleconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/icalconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/icaldirconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/maildirconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/maildispatcherconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/mboxconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/mixedmaildirconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/newmailnotifierconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/pop3config.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcardconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/contactsconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/googleconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/icalconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/icaldirconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/maildirconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/maildispatcherconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/mboxconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/mixedmaildirconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/newmailnotifierconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/pop3config.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/vcardconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
 %dir %{_libdir}/qt6/plugins/pim6/kcms/common
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/common/kcm_ldap.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/davgroupwareconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/etesyncconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/imapconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/kolabconfig.so
+%{_libdir}/qt6/plugins/pim6/kcms/common/kcm_ldap.so
+%{_libdir}/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/davgroupwareconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/etesyncconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/imapconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/kolabconfig.so
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
