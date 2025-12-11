@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.3
+%define		kdeappsver	25.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	25.08.3
-Release:	2
+Version:	25.12.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8153c1596a4a81bedadf8bfec8c55491
+# Source0-md5:	47315db8d0f17906e4db5e8dfab2b634
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -63,7 +63,7 @@ BuildRequires:	kf6-knotifyconfig-devel >= %{kframever}
 BuildRequires:	kf6-ktextwidgets-devel >= %{kframever}
 BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
 BuildRequires:	libetebase-devel
-BuildRequires:	libkolabxml-devel >= 1.1
+BuildRequires:	libkolabxml-devel >= 1.1.6-21
 BuildRequires:	libxslt-progs
 BuildRequires:	ninja
 BuildRequires:	qca-qt6-devel
