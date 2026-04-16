@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.12.3
+%define		kdeappsver	26.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	25.12.3
-Release:	2
+Version:	26.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	788b626be0876e929cab740a8884f340
+# Source0-md5:	15b0667fbbb00aeca93e56abd8ad980b
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -240,3 +240,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kdepim-runtime.categories
 %{_datadir}/qlogging-categories6/kdepim-runtime.renamecategories
 %{_datadir}/knotifications6/akonadi_imap_resource.notifyrc
+%{_datadir}/knotifications6/akonadi_kolab_resource.notifyrc
