@@ -82,6 +82,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Runtime components for Akonadi KDE. This package contains Akonadi
 agents written using KDE Development Platform libraries.
 
+%description -l pl.UTF-8
+Komponenty do Akonadi KDE. Ten pakiet zawiera agenty Akonadi napisane
+z użyciem bibliotek KDE.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
