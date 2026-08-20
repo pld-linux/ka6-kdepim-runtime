@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.3
-%define		kframever	5.94.0
+%define		kdeappsver	26.08.0
+%define		kframever	6.29.0
 %define		qtver		5.15.2
 %define		kaname		kdepim-runtime
 Summary:	kdepim runtime
 Name:		ka6-%{kaname}
-Version:	26.04.3
+Version:	26.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7b519f4cc67424039e5cf0229f17493b
+# Source0-md5:	830f48223993207d51069f4dcea54e0c
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -42,7 +42,6 @@ BuildRequires:	ka6-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka6-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmailtransport-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmbox-devel >= %{kdeappsver}
-BuildRequires:	ka6-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka6-libkgapi-devel >= %{kdeappsver}
 BuildRequires:	ka6-pimcommon-devel >= %{kdeappsver}
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
@@ -58,6 +57,7 @@ BuildRequires:	kf6-kholidays-devel >= %{kframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kitemmodels-devel >= %{kframever}
+BuildRequires:	kf6-kmime-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
 BuildRequires:	kf6-knotifyconfig-devel >= %{kframever}
 BuildRequires:	kf6-ktextwidgets-devel >= %{kframever}
@@ -134,7 +134,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_ical_resource
 %attr(755,root,root) %{_bindir}/akonadi_icaldir_resource
 %attr(755,root,root) %{_bindir}/akonadi_imap_resource
-%attr(755,root,root) %{_bindir}/akonadi_kolab_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildir_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildispatcher_agent
 %attr(755,root,root) %{_bindir}/akonadi_mbox_resource
@@ -182,7 +181,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/pim6/akonadi/config/davgroupwareconfig.so
 %{_libdir}/qt6/plugins/pim6/akonadi/config/etesyncconfig.so
 %{_libdir}/qt6/plugins/pim6/akonadi/config/imapconfig.so
-%{_libdir}/qt6/plugins/pim6/akonadi/config/kolabconfig.so
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
@@ -193,7 +191,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/icaldirresource.desktop
 %{_datadir}/akonadi/agents/icalresource.desktop
 %{_datadir}/akonadi/agents/imapresource.desktop
-%{_datadir}/akonadi/agents/kolabresource.desktop
 %{_datadir}/akonadi/agents/maildirresource.desktop
 %{_datadir}/akonadi/agents/maildispatcheragent.desktop
 %{_datadir}/akonadi/agents/mboxresource.desktop
@@ -227,7 +224,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.akonadi_ews_resource.desktop
 %{_desktopdir}/org.kde.akonadi_google_resource.desktop
 %{_desktopdir}/org.kde.akonadi_imap_resource.desktop
-%{_desktopdir}/org.kde.akonadi_kolab_resource.desktop
 %{_desktopdir}/org.kde.akonadi_openxchange_resource.desktop
 %{_desktopdir}/org.kde.akonadi_vcard_resource.desktop
 %{_desktopdir}/org.kde.akonadi_vcarddir_resource.desktop
@@ -244,4 +240,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kdepim-runtime.categories
 %{_datadir}/qlogging-categories6/kdepim-runtime.renamecategories
 %{_datadir}/knotifications6/akonadi_imap_resource.notifyrc
-%{_datadir}/knotifications6/akonadi_kolab_resource.notifyrc
